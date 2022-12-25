@@ -1,0 +1,84 @@
+.pagination{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagination ul i{
+    color: rebeccapurple;
+    list-style: none;
+}
+
+.pagination .wrapper{
+    background-color: #212332;
+    color: #FFF;
+    display: inline-block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.pagination .wrapper .flexing{
+    height: 30px;
+}
+
+.pagination .wrapper .flexing .left, 
+.pagination .wrapper .flexing .left-unclickable, 
+.pagination .wrapper .flexing .right, 
+.pagination .wrapper .flexing .right-unclickable{
+    background-color: #3198f7;
+    color: #FFF;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination .wrapper .flexing .left:hover, 
+.pagination .wrapper .flexing .right:hover{
+    background-color: #3197f7d7;
+}
+
+.pagination .wrapper .flexing .left,
+.pagination .wrapper .flexing .left-unclickable{
+    margin-right: 5px;
+}
+
+.pagination .wrapper .flexing .right,
+.pagination .wrapper .flexing .right-unclickable{
+    margin-left: 5px;
+}
+
+
+.pagination .wrapper .flexing .right-unclickable,
+.pagination .wrapper .flexing .left-unclickable{
+    background-color: #2a2d3e !important;
+}
+
+
+
+.pagination .wrapper .flexing .middle ul{
+    display: flex;
+    gap: 5px;
+}
+
+.pagination .wrapper .flexing .middle ul li{
+    height: 30px;
+    min-width: 30px;
+    text-align: center;
+    line-height: 30px;
+    list-style: none;
+}
+
+.pagination .wrapper .flexing .middle ul .p-link:hover,
+.pagination .wrapper .flexing .pagination-active{
+    background: linear-gradient(90deg, #3198f7, #76b5f0);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination .wrapper .right-side{
+    padding: 50px;
+    background-color: #212332;
+    display: flex;
+    justify-content: space-between;
+}

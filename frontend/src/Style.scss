@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa&family=Fredoka+One&family=Oswald&family=Roboto:wght@300&family=Teko&display=swap');
+ 
+
+$primary-color: #188932;
+$background-color: rgb(241, 244, 245);
+$card-color: #FFFFFF;
+
+$text-primary: #000;
+$text-secondary: rgb(57, 57, 57);
+
+$text-font1: 'Roboto', sans-serif;
+$text-font2: 'Fredoka One', cursive;
+$text-font3: 'Changa', sans-serif;
+$text-font4: 'Oswald', sans-serif;
+$text-font5: 'Teko', sans-serif;
+
+
+// slider vars
+$slider-width: 300px;
+$slider-padding: 30px;
+
+body {
+  background-color: $background-color;
+  color: $text-primary;
+  font-family: $text-font1;
+}
+
+table{  
+  width: 100%;
+  border-spacing: 0;
+  table-layout:fixed;
+  text-align: center;
+}
+
+table thead{
+  background-color: $card-color;
+  height: 40px;
+  font-size: 12px;
+}
+
+table tr{
+  font-size: 12px;
+  color: black;
+  height: 40px;
+}
+
+table tr td .colmun{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+table tr td .colmun span{
+  font-size: 10px;
+  color:rgb(108, 108, 108);
+}
+
+table tr:nth-child(even){
+  background-color: #efefef;
+}
+
+table tr:nth-child(odd){
+  background-color: #dcdce1;
+}
+
+.slider{
+  background-color: $card-color;
+  color: $text-primary;
+  width: $slider-width;
+  height: 100vh;
+
+  .top{
+    .role{
+      padding: $slider-padding;
+      h3{
+        color: $primary-color;
+        font-size: 20px;
+        font-family: $text-font2;
+      }
+      span{
+        color: $text-secondary;
+        font-size: 13px;
+      }
+    }
+  }
+  .nav{
+    font-family: $text-font2;
+    font-weight: 100;
+    .menu-title{
+      margin: 0 0 5px $slider-padding;
+      display: block;
+      font-size: 12px;
+      color: $text-secondary;
+      font-family: $text-font1;
+
+    }
+    ul li{
+      padding-left: $slider-padding;
+      height: 35px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    ul li a{
+      display: flex;
+      align-items: center;
+      color: #000;
+      text-decoration: none;
+      width: 100%;
+      height: 35px;
+    }
+    ul li.active, ul li:hover{
+      background: linear-gradient(to right, #18893220 0%, #18893200 100%);
+      color: $primary-color;
+      position: relative;
+    }
+    ul li.active::before,
+    ul li:hover::before{
+      content: '';
+      width: 5px;
+      height: 35px;
+      background-color: $primary-color;
+      border-radius: 3px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .bottom{
+    padding: calc($slider-padding / 2);
+    text-align: center;
+    .background{
+      background-color: #18893250;
+      padding: 15px 10px;
+      border-radius: 5px;
+    }
+    h3{
+      font-family: $text-font2;
+      font-size: 15px;
+      font-weight: 100;
+    }
+    span{
+      display: block;
+      margin: 5px 0;
+      font-size: 12px;
+    }
+    button{
+      width: 100%;
+      height: 35px;
+      background-color: $card-color;
+      font-size: 13px;
+      font-family: $text-font2;
+      font-weight: 100;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover{
+      background-color: $primary-color;
+      cursor: pointer;
+      transition: .25s ease-in-out;
+      color: white;
+    }
+  }
+}
+
+
+/*  ------------------------------------------------------------------------------  */
+/*  ------------------------------------------------------------------------------  */
+/*  ------------------------------------------------------------------------------  */
+/*    */
+/*    Dashboard Page
+/*    */
+/*  ------------------------------------------------------------------------------  */
+/*  ------------------------------------------------------------------------------  */
+/*  ------------------------------------------------------------------------------  */
+
+
+
+#dashboard{
+  .dashboard{
+    background-color: $background-color;
+    padding: 20px;
+    width: 100%;
+    .d-top{
+      .d-left{
+        h4{
+          font-family: $text-font2;
+          font-size: 15px;
+          font-weight: 100;
+        }
+        span{
+          font-size: 11px;
+          color: $text-secondary;
+        }
+      }
+      .d-right{
+        .search-input{
+          background-color: $card-color;
+          border-radius: 15px;
+          height: 35px;
+          padding: 0 15px;
+          input{
+            border: none;
+            outline: none;
+            width: 200px;
+            height: 30px;
+          }
+        }
+        .avatar-picture, .notifications-icon{
+          width: 35px;
+          height: 35px;
+          border-radius: 15px;
+          background-color: $card-color;
+          margin-left: 10px;
+        }
+      }
+    }
+    .statistics{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+
+      .card{
+        background-color: $card-color;
+        padding: 20px;
+        border-radius: 10px;
+        p{
+          font-size: 17px;
+          font-family: $text-font2;
+        }
+        span{
+          font-size: 11px;
+          color: $text-secondary;
+        }
+        .clients{background-color: #188932;}
+        .drivers{background-color: #c73232;}
+        .cars{background-color: #3f1679;}
+        .reservations{background-color: #891865;}
+        .card-right{
+          color: white;
+          width: 30px;
+          height: 30px;
+          border-radius: 5px;
+        }
+      }
+    }
+    .charts{
+      margin-top: 20px;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      .line-chart{
+        padding: 20px;
+        width: 100%;
+        background-color: $card-color;
+        border-radius: 10px;
+
+        .client-label, .driver-label{
+          font-size: 12px;
+          position: relative;
+          display: flex;
+          span{
+            display: block;
+            margin-right: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 12px;
+          }
+        }
+        .space{
+          margin: 0 20px;
+        }
+        .client-label span{
+          background-color: #188932;
+        }
+        .driver-label span{
+          background-color: #c73232;
+        }
+      }
+      .doughnut-chart{
+        padding: 20px;
+        width: 100%;
+        background-color: $card-color;
+        border-radius: 10px;
+      }
+    }
+    
+  }
+}
+
+
+#reservations{
+  .reservations{
+    background-color: $background-color;
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+#users{
+  .users{
+    background-color: $background-color;
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+#drivers{
+  .drivers{
+    background-color: $background-color;
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+#cars{
+  .cars{
+    background-color: $background-color;
+    padding: 20px;
+    width: 100%;
+  }
+}

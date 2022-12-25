@@ -1,0 +1,26 @@
+{
+  "name": "convoiturage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon Server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-fileupload": "^1.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "msg91": "^0.0.6",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.8.0",
+    "nodemon": "^2.0.15",
+    "otp-generator": "^4.0.0"
+  }
+}
