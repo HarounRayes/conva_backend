@@ -85,15 +85,17 @@ function GetReservationPlaces (req, res){
 }
 
 function GetAllReservations (req, res){
-
     // how many item for one page
     const limit = 25;
 
     // the page we are currently checking
-    const page = req.query.page;
+    const page = req.query.page ?? 1;
+
     const offset = (page - 1) * limit;
 
-    conn.getConnection((err, connection) => {  
+
+    conn.getConnection((err, connection) => {
+
 
         const query = `
             SELECT r.*, sc.name AS s_name, ec.name AS e_name, c.car_name, d.profile, u.name AS user_name, d.id as driver_id, 
@@ -108,13 +110,15 @@ function GetAllReservations (req, res){
             WHERE r.status = 0 AND (cast(concat(start_date, ' ', start_time) as datetime) >= now())
             ORDER BY created_at DESC
             LIMIT ? OFFSET ?
-        `;    
+        `;
+
 
         connection.query(query, [limit, offset], (err, result) => {
             if (err) throw err;
             connection.release();
             res.json(result);
         });
+
     });
 }
 
@@ -124,7 +128,7 @@ function GetReservationsFilter (req, res){
     const limit = 25;
 
     // the page we are currently checking
-    const page = req.query.page;
+    const page = req.query.page ?? 1;
     const offset = (page - 1) * limit;
 
     const {sCityId, eCityId, minPrice, maxPrice, placesNumber, sorted} = req.body;
@@ -163,7 +167,7 @@ function GetReservationsSearch (req, res){
     const limit = 25;
 
     // the page we are currently checking
-    const page = req.query.page;
+    const page = req.query.page ?? 1;
     const offset = (page - 1) * limit;
 
     const {city} = req.body;

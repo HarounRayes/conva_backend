@@ -51,7 +51,7 @@ function GetAllReservationsAdmin (req, res){
     const limit = 15;
 
     // the page we are currently checking
-    const page = req.query.page;
+    const page = req.query.page ?? 1;
     const offset = (page - 1) * limit;
 
     conn.getConnection((err, connection) => {  
@@ -95,7 +95,7 @@ function GetAllUsersAdmin (req, res){
     const limit = 15;
 
     // the page we are currently checking
-    const page = req.query.page;
+    const page = req.query.page ?? 1;
     const offset = (page - 1) * limit;
 
     conn.getConnection((err, connection) => {  
@@ -129,7 +129,7 @@ function GetAllDriversAdmin (req, res){
     const limit = 15;
 
     // the page we are currently checking
-    const page = req.query.page;
+    const page = req.query.page ?? 1;
     const offset = (page - 1) * limit;
 
     conn.getConnection((err, connection) => {  
@@ -162,7 +162,7 @@ function GetAllCarsAdmin (req, res){
     const limit = 15;
 
     // the page we are currently checking
-    const page = req.query.page;
+    const page = req.query.page ?? 1;
     const offset = (page - 1) * limit;
 
     conn.getConnection((err, connection) => {  
