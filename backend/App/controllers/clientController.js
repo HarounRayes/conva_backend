@@ -150,7 +150,7 @@ function GetAuthClient(req, res){
             SELECT u.*, c.*
             FROM clients c JOIN users u ON c.user_id = u.id
             WHERE u.id = ?
-        `;   
+        `;
         connection.query(query, id, (err, result) => {
             if (err) throw err;
             connection.release();

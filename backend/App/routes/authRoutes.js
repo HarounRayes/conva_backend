@@ -8,7 +8,6 @@ authRoutes.post('/signin', authController.Login);
 authRoutes.get('/get/auth/user', checkAuthToken, authController.GetAuthUser);
 
 
-
 authRoutes.get('/get/otp/:id', authController.RequestOtp);
 authRoutes.get('/verify/otp/:id', authController.VerifyOtp);
 
