@@ -25,7 +25,7 @@ function Register (req, res) {
                     type: type,
                 }
                 connection.query("INSERT INTO users SET ?", saveUser ,(err, userResult) => {
-                    connection.query("INSERT INTO drivers (user_id, payment_date) VALUES (?, now() + INTERVAL 1 month)", userResult.insertId, (err, result) => {
+                    connection.query("INSERT INTO drivers (user_id, payment_date) VALUES (?, now() + INTERVAL 6 month)", userResult.insertId, (err, result) => {
                         connection.release();
                         res.json({
                             logged: true,
