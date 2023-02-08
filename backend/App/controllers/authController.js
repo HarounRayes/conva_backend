@@ -63,7 +63,6 @@ function GetUserType(req, res){
 
 function GetAuthUser(req, res){
     const user = req.user;
-    
     conn.getConnection((err, connection) => {
         const query = 'SELECT name, type, email FROM users WHERE id = ?';
         connection.query(query, user.id, (err, result) => {

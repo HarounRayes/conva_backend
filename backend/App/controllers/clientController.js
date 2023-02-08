@@ -145,7 +145,7 @@ function NotifyAdminUserUploadCard(user_id, filename){
 function GetAuthClient(req, res){
     const id = req.user.id;
 
-    conn.getConnection((err, connection) => {   
+    conn.getConnection((err, connection) => {
         const query = `
             SELECT u.*, c.*
             FROM clients c JOIN users u ON c.user_id = u.id
@@ -154,6 +154,7 @@ function GetAuthClient(req, res){
         connection.query(query, id, (err, result) => {
             if (err) throw err;
             connection.release();
+            console.log(result[0]);
             res.json(result[0]);
         });
     });

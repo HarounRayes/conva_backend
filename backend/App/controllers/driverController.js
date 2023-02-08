@@ -30,7 +30,6 @@ function Register (req, res) {
                         res.json({
                             logged: true,
                             msg: 'User Has Register Successfully',
-                            password: hashedPassword,
                             id: userResult.insertId,
                         });
                     }); 
@@ -199,8 +198,7 @@ function GetDriverId (req, res){
             SELECT d.id
             FROM drivers d JOIN users u ON d.user_id = u.id
             WHERE u.id = ?
-        `;         
-
+        `;
         connection.query(query, user_id, (err, result) => {
             if (err) throw err;
             connection.release();
